@@ -1,0 +1,25 @@
+Source: tl-expected
+Section: libdevel
+Priority: optional
+Maintainer: Nicholas Guriev <guriev-ns@ya.ru>
+Build-Depends: debhelper-compat (= 12)
+Build-Depends-Indep: catch <!nocheck>, cmake (>= 3.14)
+Standards-Version: 4.5.0
+Rules-Requires-Root: no
+Homepage: https://tl.tartanllama.xyz/
+Vcs-Git: https://salsa.debian.org/debian/tl-expected.git
+Vcs-Browser: https://salsa.debian.org/debian/tl-expected
+
+Package: libexpected-dev
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: C++11/14/17 std::expected with functional-style extensions
+ Single header implementation of std::expected with functional-style extensions.
+ .
+ std::expected is proposed as the preferred way to represent object which will
+ either have an expected value, or an unexpected value giving information about
+ why something failed. Unfortunately, chaining together many computations which
+ may fail can be verbose, as error-checking code will be mixed in with the
+ actual programming logic. This implementation provides a number of utilities to
+ make coding with expected cleaner.
