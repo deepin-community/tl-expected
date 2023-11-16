@@ -2,9 +2,9 @@ Source: tl-expected
 Section: libdevel
 Priority: optional
 Maintainer: Nicholas Guriev <guriev-ns@ya.ru>
-Build-Depends: debhelper-compat (= 12)
-Build-Depends-Indep: catch <!nocheck>, cmake (>= 3.14)
-Standards-Version: 4.5.0
+Build-Depends: debhelper-compat (= 13)
+Build-Depends-Indep: catch2 <!nocheck>, cmake (>= 3.14)
+Standards-Version: 4.6.1
 Rules-Requires-Root: no
 Homepage: https://tl.tartanllama.xyz/
 Vcs-Git: https://salsa.debian.org/debian/tl-expected.git

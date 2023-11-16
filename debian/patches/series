@@ -1,2 +1,1 @@
-No-online-FetchContent.patch
-Backport-to-classic-Catch.patch
+Prefer-packaged-Catch2.patch

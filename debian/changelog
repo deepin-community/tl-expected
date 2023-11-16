@@ -1,8 +1,22 @@
-tl-expected (1.0.0.1-deepin) unstable; urgency=medium
+tl-expected (1.1.0-1) unstable; urgency=medium
 
-  * release 1.0.0.1-deepin
+  * New upstream release.
+  * Rewrite d/watch file for updated GitHub HTML code.
+  * Remove previous patches, because they are no longer needed.
+  * Build depend on catch2 instead of outdated catch.
+  * New Prefer-packaged-Catch2.patch to avoid network access.
+  * Add upstream metadata.
 
- -- <lvpeilong@uniontech.com>  Wed, 19 Oct 2022 14:14:30 +0800
+ -- Nicholas Guriev <guriev-ns@ya.ru>  Sun, 18 Jun 2023 00:23:17 +0300
+
+tl-expected (1.0.0~dfsg-3) unstable; urgency=medium
+
+  * New Include-memory-header.patch (Closes: #1016247)
+  * Migrate to Debhelper compatibility level 13.
+    - Remove explicit value of the CMAKE_SKIP_INSTALL_ALL_DEPENDENCY variable.
+  * Bump Standards-Version to 4.6.1, no required changes.
+
+ -- Nicholas Guriev <guriev-ns@ya.ru>  Sun, 31 Jul 2022 11:05:37 +0300
 
 tl-expected (1.0.0~dfsg-2) unstable; urgency=medium
 
@@ -14,7 +28,7 @@ tl-expected (1.0.0~dfsg-2) unstable; urgency=medium
 tl-expected (1.0.0~dfsg-1.1) unstable; urgency=medium
 
   * Non-maintainer upload.
-  * No-change source-only upload to allow testing migration. 
+  * No-change source-only upload to allow testing migration.
 
  -- Boyuan Yang <byang@debian.org>  Thu, 23 Jan 2020 14:08:07 -0500
 
