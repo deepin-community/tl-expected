@@ -1,17 +1,11 @@
 #!/usr/bin/make -f
 
 include /usr/share/dpkg/default.mk
-EXTRA_CMAKE_VARIABLES += CMAKE_SKIP_INSTALL_ALL_DEPENDENCY=ON
 
 %:
 	dh $@
 
-override_dh_auto_configure:
-	dh_auto_configure -- $(EXTRA_CMAKE_VARIABLES:%=-D%)
-
 ifneq ($(filter nocheck, $(DEB_BUILD_OPTIONS)),)
-override_dh_auto_build:
-else
-override_dh_auto_test:
-	obj-$(DEB_HOST_GNU_TYPE)/tests
+override_dh_auto_configure:
+	dh_auto_configure -- -DBUILD_TESTING=OFF
 endif
