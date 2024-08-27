@@ -1,3 +1,9 @@
+tl-expected (1.1.0-2) unstable; urgency=medium
+
+  * New Migrate-to-Catch2-v3.patch (Closes: #1054702)
+
+ -- Nicholas Guriev <guriev-ns@ya.ru>  Sat, 23 Dec 2023 12:55:48 +0300
+
 tl-expected (1.1.0-1) unstable; urgency=medium
 
   * New upstream release.
