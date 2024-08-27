@@ -1,0 +1,119 @@
+Description: Migrate to Catch2 v3
+ Prefer granulated headers as the documentation recommends.
+Author: Nicholas Guriev <guriev-ns@ya.ru>
+Last-Update: Sat, 23 Dec 2023 12:42:08 +0300
+
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -83,7 +83,7 @@ if(EXPECTED_BUILD_TESTS)
+ 
+   target_link_libraries(${PROJECT_NAME}-tests
+     PRIVATE
+-      Catch2::Catch2
++      Catch2::Catch2WithMain
+       expected)
+   add_test(NAME tl::expected::tests COMMAND ${PROJECT_NAME}-tests)
+ endif()
+--- a/tests/assertions.cpp
++++ b/tests/assertions.cpp
+@@ -1,4 +1,5 @@
+-#include <catch2/catch.hpp>
++#include <catch2/catch_test_macros.hpp>
++#include <catch2/matchers/catch_matchers.hpp>
+ #include <stdexcept>
+ 
+ #define TL_ASSERT(cond) if (!(cond)) { throw std::runtime_error(std::string("assertion failure")); }
+--- a/tests/assignment.cpp
++++ b/tests/assignment.cpp
+@@ -1,4 +1,4 @@
+-#include <catch2/catch.hpp>
++#include <catch2/catch_test_macros.hpp>
+ #include <tl/expected.hpp>
+ 
+ TEST_CASE("Simple assignment", "[assignment.simple]") {
+--- a/tests/bases.cpp
++++ b/tests/bases.cpp
+@@ -1,4 +1,4 @@
+-#include <catch2/catch.hpp>
++#include <catch2/catch_test_macros.hpp>
+ #include <tl/expected.hpp>
+ 
+ #include <string>
+--- a/tests/constexpr.cpp
++++ b/tests/constexpr.cpp
+@@ -1,4 +1,4 @@
+-#include <catch2/catch.hpp>
++#include <catch2/catch_test_macros.hpp>
+ #include <tl/expected.hpp>
+ 
+ TEST_CASE("Constexpr", "[constexpr]") {
+--- a/tests/constructors.cpp
++++ b/tests/constructors.cpp
+@@ -1,4 +1,4 @@
+-#include <catch2/catch.hpp>
++#include <catch2/catch_test_macros.hpp>
+ #include <tl/expected.hpp>
+ 
+ #include <type_traits>
+--- a/tests/emplace.cpp
++++ b/tests/emplace.cpp
+@@ -1,4 +1,4 @@
+-#include <catch2/catch.hpp>
++#include <catch2/catch_test_macros.hpp>
+ #include <tl/expected.hpp>
+ #include <memory>
+ #include <vector>
+--- a/tests/extensions.cpp
++++ b/tests/extensions.cpp
+@@ -1,4 +1,5 @@
+-#include <catch2/catch.hpp>
++#include <memory>
++#include <catch2/catch_test_macros.hpp>
+ #include <tl/expected.hpp>
+ 
+ #define TOKENPASTE(x, y) x##y
+--- a/tests/issues.cpp
++++ b/tests/issues.cpp
+@@ -1,4 +1,4 @@
+-#include <catch2/catch.hpp>
++#include <catch2/catch_test_macros.hpp>
+ #include <tl/expected.hpp>
+ 
+ #include <string>
+--- a/tests/main.cpp
++++ /dev/null
+@@ -1,2 +0,0 @@
+-#define CATCH_CONFIG_MAIN
+-#include <catch2/catch.hpp>
+--- a/tests/noexcept.cpp
++++ b/tests/noexcept.cpp
+@@ -1,4 +1,4 @@
+-#include <catch2/catch.hpp>
++#include <catch2/catch_test_macros.hpp>
+ #include <tl/expected.hpp>
+ 
+ TEST_CASE("Noexcept", "[noexcept]") {
+--- a/tests/observers.cpp
++++ b/tests/observers.cpp
+@@ -1,4 +1,4 @@
+-#include <catch2/catch.hpp>
++#include <catch2/catch_test_macros.hpp>
+ #include <tl/expected.hpp>
+ 
+ struct move_detector {
+--- a/tests/relops.cpp
++++ b/tests/relops.cpp
+@@ -1,4 +1,4 @@
+-#include <catch2/catch.hpp>
++#include <catch2/catch_test_macros.hpp>
+ #include <tl/expected.hpp>
+ 
+ TEST_CASE("Relational operators", "[relops]") {
+--- a/tests/swap.cpp
++++ b/tests/swap.cpp
+@@ -1,4 +1,4 @@
+-#include <catch2/catch.hpp>
++#include <catch2/catch_test_macros.hpp>
+ #include <tl/expected.hpp>
+ 
+ struct no_throw {

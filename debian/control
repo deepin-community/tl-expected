@@ -3,7 +3,7 @@ Section: libdevel
 Priority: optional
 Maintainer: Nicholas Guriev <guriev-ns@ya.ru>
 Build-Depends: debhelper-compat (= 13)
-Build-Depends-Indep: catch2 <!nocheck>, cmake (>= 3.14)
+Build-Depends-Indep: catch2 (>= 3.0.1) <!nocheck>, cmake (>= 3.14)
 Standards-Version: 4.6.1
 Rules-Requires-Root: no
 Homepage: https://tl.tartanllama.xyz/
